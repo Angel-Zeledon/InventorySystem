@@ -27,7 +27,7 @@ class ProductoView(APIView):
         serializer = ProductoSerializer(data = request.data)
         
         inventario = self.ObtenerInventario(request.data['nombre'])
-        datos = {'nombre' : inventario.nombre, 'cantidad' : inventario.cantidad - 1}
+        datos = {'nombre' : inventario.nombre, 'cantidad' : inventario.cantidad - request.data['cantidad']}
         serializer_inventario = InventarioSerializer(inventario, data = datos)
         
         if serializer.is_valid():
