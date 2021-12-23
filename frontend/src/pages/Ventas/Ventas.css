@@ -1,0 +1,100 @@
+.Pagina {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+.BarraLateral {
+    width: 20%;
+    background-color: #251c3b;
+    height: 2000px;
+    display: flex;
+    color: white;
+    flex-flow: column;
+    align-items: center;
+}
+
+.Contenido {
+    width: 80%;
+    background-color: #e2e2e2;
+    height: 2000px;
+}
+
+.Titulo {
+    width: 100%;
+    background-color: white;
+    padding-left: 50px;
+    box-shadow: 5px 5px 5px rgb(73, 73, 73);
+    display: flex;
+    align-content: flex-start;
+}
+
+.AgregarProductos {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(10, 47, 151);
+    color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.AgregarProductos p {
+    width: 15%;
+}
+
+.AgregarProducto {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 0;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    border: 1px solid rgb(68, 68, 68);
+}
+
+.AgregarProducto div {
+    width: 15%;
+}
+
+.Botones {
+    width: 90%;
+    display: flex;
+    flex-flow: row;
+    margin: 0 auto;
+}
+
+.BorrarBoton,
+.FuncionesBoton {
+    width: 50%;
+    padding: 20px;
+}
+
+.BorrarBoton button,
+.FuncionesBoton button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: white;
+}
+
+.BorrarBoton {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.FuncionesBoton {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    width: 50%;
+}
