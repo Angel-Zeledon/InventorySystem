@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Ventas.css'
+
+interface Props {
+    metodo: (elemento:any)=>void
+    senal : boolean
+}
 
 export const Ventas = () => {
 
-    const datosPeticiones: any[] = [];
+    const [senal,setSenal] = useState(false)
+    const [columnas, setColumnas] = useState([1]);
+    const [datos, setDatos] = useState<any>([]);
+
+
+    const Save = (elemento:any):void => {
+        setDatos([...datos, elemento]);
+    }
+
+    const EnviarDatos = ():void => {
+        setSenal(true);
+        console.log(datos)
+    }
+
+    const AgregarColumna = () => {
+        setColumnas([...columnas, 1]);
+        console.log(columnas);
+    }
+
+    const BorrarColumna = () => {
+        setColumnas(columnas.slice(0, -1));
+        console.log(columnas);
+    }
 
     return(
         <div className = "Pagina">
@@ -24,17 +51,23 @@ export const Ventas = () => {
                     <p>Cantidad</p>
                     <p>Precio</p>
                 </div>
-               <Columna/> 
+              {
+                columnas.map((item,index)=>{
+                    return (
+                        <Columna senal = {senal} metodo={Save} /> 
+                    );
+                })
+              }
                <div className = "Botones">
                    <div className = "BorrarBoton">
-                       <button  style={{backgroundColor:'red'}}> <span className="material-icons-outlined">add</span></button>
+                       <button onClick = {BorrarColumna} style={{backgroundColor:'red'}}> <span className="material-icons-outlined">add</span></button>
                    </div>
                    <div className = "FuncionesBoton">
                        <div>
-                         <button style={{backgroundColor:'blue'}}> <span className="material-icons-outlined">add</span></button>
+                         <button onClick = {AgregarColumna}  style={{backgroundColor:'blue'}}> <span className="material-icons-outlined">add</span></button>
                        </div>
                        <div>
-                         <button  style={{backgroundColor:'green'}}> <span className="material-icons-outlined">add</span></button>
+                         <button onClick = {EnviarDatos} style={{backgroundColor:'green'}}> <span className="material-icons-outlined">add</span></button>
                        </div>
                    </div>
                </div>
@@ -43,19 +76,37 @@ export const Ventas = () => {
     )
 }
 
-const Columna = ()=>{
+const Columna = ({metodo,senal}:Props)=>{
 
+    const [value, setValue] = useState({mesa:0, silla:0, cantidad: 0, nombre :''});
     const productos = ["Ventas", "Administrar", "Inventario", "Estadisticas"];
     const mesas = [1,2,3,4];
     const sillas = [1,2,3,4];
     const cantidades = [1,2,3,4,5,6,7,8,9];
 
+    const SelectProducto = (event:any) => {
+        setValue({...value, nombre: event.target.value});
+    }
+    const SelectMesa = (event:any) => {
+        setValue({...value, mesa: event.target.value});
+    }
+    const SelectSilla = (event:any) => {
+        setValue({...value, silla: event.target.value});
+    }
+    const SelectCantidad = (event:any) => {
+        setValue({...value, cantidad: event.target.value});
+    }
 
+    useEffect(()=>{
+        if(senal){
+            metodo(value);
+        }
+    },[])
 
     return (
         <div className = "AgregarProducto">
           <div className = "ProductoSelect" style = {{width:'30%'}}>
-            <select style={{width:'80%'}}>
+            <select style={{width:'80%'}} onChange = {SelectProducto}>
                 {
                     productos.map((item,index)=>{
                         return(
@@ -66,7 +117,7 @@ const Columna = ()=>{
             </select>
           </div>
           <div className = "MesaSelect">
-              <select>
+              <select onChange = {SelectMesa}>
                   {
                       mesas.map((item,index)=>{
                           return(
@@ -77,7 +128,7 @@ const Columna = ()=>{
               </select>
           </div>
            <div className = "SillaSelect">
-              <select>
+              <select onChange = {SelectSilla}>
                   {
                       sillas.map((item,index)=>{
                           return(
@@ -88,7 +139,7 @@ const Columna = ()=>{
               </select>
           </div>
           <div className = "CantidadSelect">
-              <select>
+              <select onChange = {SelectCantidad}>
                   {
                       cantidades.map((item,index)=>{
                           return(

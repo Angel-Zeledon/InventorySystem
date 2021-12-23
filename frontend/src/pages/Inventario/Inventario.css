@@ -1,0 +1,127 @@
+.Pagina {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    overflow: hidden;
+}
+
+.BarraLateral {
+    width: 20%;
+    background-color: #251c3b;
+    height: 2000px;
+    display: flex;
+    color: white;
+    flex-flow: column;
+    align-items: center;
+}
+
+.Contenido {
+    width: 80%;
+    background-color: #e2e2e2;
+    height: 2000px;
+}
+
+.Titulo {
+    width: 100%;
+    background-color: white;
+    padding-left: 50px;
+    box-shadow: 5px 5px 5px rgb(73, 73, 73);
+    display: flex;
+    align-content: flex-start;
+}
+
+.InventarioTop {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ColumnasInventarios {
+    width: 70%;
+}
+
+.AgregarInventario {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0;
+    justify-content: space-around;
+    border: 1px solid black;
+    background-color: rgb(10, 47, 151);
+}
+
+.InputsInventario {
+    width: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 5px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    border: 1px solid rgb(68.68, 68);
+}
+
+.InventarioSelect {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.InventarioSelect select {
+    width: 80%;
+}
+
+.BotonesInventario {
+    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.BotonesInventario button,
+.EliminarButton {
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.EliminarButton {
+    background-color: rgb(255, 0, 0);
+    margin-left: 10%;
+}
+
+.InventarioText {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    margin-top: 15px;
+    height: 50px;
+}
+
+.InventarioTextoTabla {
+    width: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.InventarioPdf {
+    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.InventarioPdf a h4 {
+    color: rgb(0, 81, 255);
+}

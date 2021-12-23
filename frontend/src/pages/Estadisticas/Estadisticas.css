@@ -1,0 +1,30 @@
+.Pagina {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+
+.BarraLateral {
+    width: 20%;
+    background-color: #251c3b;
+    height: 2000px;
+    display: flex;
+    color: white;
+    flex-flow: column;
+    align-items: center;
+}
+
+.Contenido {
+    width: 80%;
+    background-color: #e2e2e2;
+    height: 2000px;
+}
+
+.Titulo {
+    width: 100%;
+    background-color: white;
+    padding-left: 50px;
+    box-shadow: 5px 5px 5px rgb(73, 73, 73);
+    display: flex;
+    align-content: flex-start;
+}
